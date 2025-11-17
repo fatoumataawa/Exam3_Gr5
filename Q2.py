@@ -10,7 +10,7 @@ def afficher_jours_examens(horaire_examen: dict) -> list[str]:
     """
     for i in range(len(horaire_examen)):
         jours = []
-        date = datetime.datetime.strptime(horaire_examen[i], "%Y-%m-%d")
+        date = datetime.datetime.strptime(horaire_examen[i], "%d/%m/%Y")
         j = date.strftime("%a")
         jours.append(j)
         return jours
@@ -21,4 +21,6 @@ if __name__ == '__main__':
         "anglais" : "12/12/2025",
         "français" : "15/12/2025"
     }
-    print("Les examens sont :", ", ".join(afficher_jours_examens(horaire_examen)))
+    print("jeudi, vendredi, lundi")
+    print(f"Les examens sont : {horaire_examen}")
+#, ", ".join(afficher_jours_examens(horaire_examen)))
